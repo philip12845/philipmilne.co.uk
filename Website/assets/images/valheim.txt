@@ -1,0 +1,2 @@
+<video class="lazy entered loaded" data-src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/4d3c78c76d23605bcb78a135cef357ae.webm" loop="" playsinline="" autoplay="" data-ll-status="loaded" src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/4d3c78c76d23605bcb78a135cef357ae.webm"></video>
+
