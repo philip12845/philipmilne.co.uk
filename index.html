@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about" class="tab-links" onclick="openTab(event, 'about')">About Me</a></li>
+                <li><a href="#cv" class="tab-links" onclick="openTab(event, 'cv')">CV</a></li>
+                <li><a href="#posts" class="tab-links" onclick="openTab(event, 'posts')">Posts</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="about" class="content-section tab-content">
+        <div class="container">
+            <h1>About Me</h1>
+            </div>
+            <div class="greeting" id="greeting"></div> <!-- Placeholder for the greeting message -->
+            <p>Thanks for visiting my not quite finished website, I'm a driven IT professional with a passion for technology and a knack for problem-solving. Recently completing a Level 3 ICT (Information Communications Technician) apprenticeship, With hands-on experience managing Linux servers and a range of other technologies at ANS, a tech support company in Manchester, I thrive on challenging  projects the most recent of which includes re-installing our backup servers to upgrade the Operating System and backup software in use on them. This provides better customer experience as well as ensuring that unnecessary tickets aren't being raised improving efficiency and decreasing the amount of older servers in use.</p>
+            <p>In addition to my technical skills, I excel in customer service, managing client requests and ensuring their needs are met promptly and efficiently. At ANS, I've earned a reputation for my  dedication and hard work, consistently ranking at the top for calls taken and tickets completed. Beyond the world of IT, I find joy in outdoor walks with friends, gaming, and nurturing my collection of fish and houseplants – my well-planted fish tank is home to a vibrant community of aquatic life including a Golden Gugget Pleco, Bloodfin Tetras, Black Neon Tetras, and Amano Shrimp.</p>
+        </div>
+    </section>    
+    <section id="cv" class="content-section tab-content" style="display:none;">
+        <div class="container">
+            <h1>My CV</h1>
+            <p>You can download my CV from the links below:</p>
+            <a href="./Philip Milne - CV.docx" class="cv-docx"> Philip Milne - CV.docx</a>
+	    <a href="./Philip Milne - CV.pdf" class="cv-pdf"> Philip Milne - CV.pdf</a>
+        </div>
+    </section>
+    <section id="posts" class="content-section tab-content" style="display:none;">
+        <div class="container">
+            <h1>Posts</h1>
+            <!-- Search input field -->
+            <input type="text" id="search-input" placeholder="Search posts..." onkeyup="searchPosts()">
+            <div id="posts-list">
+                <div class="post">
+                    <h2>Timeline</h2>
+                    <p>The timeline for this website is below:</p>
+                    <p>1: fix the search bar up there ^^ to fit in with the rest of the site.</p>
+                    <p>2. Compile all of my projects with guides and add them onto here for anyone to use.</p>
+                    <p>3. Introduce some php to allow for dynamic webpaging and a unique experience per user.</p>
+                    <p>4. Allow these posts to be searchable and archived so that you can visit a specific posts web address.</p>
+                    <p>5. Let me know if I should add something by sending me an email at pm@philipmilne.co.uk</p>
+                </div>
+                <div class="post">
+                    <h2>Test</h2>
+                    <p>Test</p>
+                </div>
+                <!-- Add more posts here -->
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 philipmilne.co.uk</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
