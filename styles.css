@@ -24,13 +24,13 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #58a6ff; /* Bright blue for links */
+    color: #5cdc89; /* Bright green for links */
     text-decoration: none;
     padding: 5px 10px;
 }
 
 nav ul li a.active {
-    background-color: #58a6ff; /* Bright blue for the active tab */
+    background-color: #5cdc89; /* Bright green for the active tab */
     color: #0d1117; /* Dark background for the active tab text */
 }
 
@@ -42,12 +42,6 @@ nav ul li a.active {
 .container {
     width: 80%;
     margin: 0 auto;
-}
-
-.profile-picture img {
-    border-radius: 50%;
-    max-width: 200px;
-    height: auto;
 }
 
 .cv-link {
@@ -105,4 +99,11 @@ footer {
     width: 100%;
     position: absolute;
     bottom: 0;
+}
+
+.search-input {
+    padding: 5px;
+    border: 2px solid #58a6ff;
+    border-radius: 5px;
+    width: 300px;
 }
