@@ -103,7 +103,9 @@ footer {
 
 .search-input {
     padding: 5px;
-    border: 2px solid #58a6ff;
+    border: none;
     border-radius: 5px;
     width: 300px;
+    background-color: #161b22;
+    color: #ffffff; /* Optional: to ensure the text inside is visible */
 }
