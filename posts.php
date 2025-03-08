@@ -2,36 +2,59 @@
 <html lang="en">
 <head>
 
-	<?php $pageTitle = "Posts | Philip Milne"; ?>
-	<?php include 'includes/header.php'; ?>
+        <?php $pageTitle = "Posts | Philip Milne"; ?>
+        <?php include 'includes/header.php'; ?>
 
 </head>
 
-<body>
-    <section id="posts" class="content-section">
-        <div class="container">
-            <h1>Posts</h1>
-            <!-- Search input field -->
-            <input type="text" class="search-input" id="search-input" placeholder="Search posts..." onkeyup="searchPosts()">
-            <div id="posts-list">
-                <div class="post">
-                    <h2>Timeline</h2>
-                    <p>The timeline for this website is below:</p>
-                    <p>1. Compile all of my projects with guides and add them onto here for anyone to use.</p>
-                    <p>2. Introduce some php to allow for dynamic webpaging and a unique experience per user.</p>
-                    <p>3. Allow these posts to be searchable and archived so that you can visit a specific posts web address.</p>
-                    <p>4. Let me know if I should add something by sending me an email at pm@philipmilne.co.uk</p>
-                </div>
-                <div class="post">
-                    <h2>Test</h2>
-                    <p>Test</p>
-                </div>
-                <!-- Add more posts here -->
-            </div>
-        </div>
-    </section>
-    <?php include 'includes/footer.php'; ?>
-    <script src="assets/js/script.js"></script>
 
-</body>
-</html>
+<?php
+$posts = [];
+
+$files = glob("posts/*.php");
+
+// __DIR__ . saving this bit of code it gives an absolute path but doesnt work in the above situation
+
+foreach ($files as $file) {
+    $content = file_get_contents($file);
+    $wordCount = str_word_count(strip_tags($content));
+    $readingTime = ceil($wordCount / 200);
+    $modified = filemtime($file);
+    
+    $posts[] = [
+        'path' => $file,
+        'name' => basename($file, ".php"),
+        'modified' => $modified,
+        'readingTime' => $readingTime
+    ];
+}
+
+// Sort posts by last modified time (most recent first)
+usort($posts, fn($a, $b) => $b['modified'] - $a['modified']);
+
+// print_r($files); // for debugging purposes
+
+?>
+
+<body>
+
+<section id="posts" class="content-section">
+  <div class="container">
+      <h1>Posts</h1>
+      <input type="text" class="search-input" id="search-input" placeholder="Search posts..." onkeyup="searchPo>
+      <div id="posts-list">
+
+        <?php foreach ($posts as $post): ?>
+
+<div class="post">
+            <h2><a href="<?= $post['path'] ?>" class="post-title-link"><?= htmlspecialchars($post['name']) ?></a></h2>
+            <p>Last updated: <?= date('Y-m-d H:i:s', $post['modified']) ?></p>
+            <p>~<?= $post['readingTime'] ?> min read</p>
+        </div>
+    <?php endforeach; ?>
+</div>
+</section>
+
+
+<?php include 'includes/footer.php'; ?>
+<script src="assets/js/script.js"></script>

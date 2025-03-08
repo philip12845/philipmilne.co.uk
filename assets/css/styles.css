@@ -117,3 +117,9 @@ footer {
     border: 3px solid #5cdc89;
     object-fit: cover;
 }
+
+.post-title-link {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Makes it same color as normal text */
+    font-weight: bold; /* Ensures it still looks like a title */
+}
